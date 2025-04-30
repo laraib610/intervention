@@ -18,4 +18,20 @@ function myFunction() {
         $('.form label .box').addClass('active')
     }
 }
+const playButton = document.getElementById('playButton');
+const video = document.getElementById('video');
+
+playButton.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        playButton.style.display = 'none';
+    } else {
+        video.pause();
+        playButton.style.display = 'block';
+    }
+});
+
+video.addEventListener('ended', () => {
+    playButton.style.display = 'block';
+});
 

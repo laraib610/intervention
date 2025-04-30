@@ -23,5 +23,6 @@ function showSlides(n, no) {
   // Show current slide if exists
   if (x[slideIndex[no] - 1]) {
     x[slideIndex[no] - 1].style.display = "block";
+
   }
 }
