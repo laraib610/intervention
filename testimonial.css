@@ -1,130 +1,97 @@
-.mySlides1{display: none}
-img {vertical-align: middle;}
-.testimonials{
+.testimonial-carousel {
     position: relative;
-    top: -30px;
-    margin: 50px 0px;
-}
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  height: 200px; 
-}
-.slide{
+    bottom: 90px;
+    max-width: 1000px;
+    margin: 40px auto;
+    overflow: hidden;
+  }
+  
+  .carousel-wrapper {
     display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* 3 slides */
+  }
+  
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
     gap: 20px;
-    position: absolute;
-    top: -68px;
-    img{
-        width: 30%;
-        border-radius: 15px;
-        margin: 10px;
-    }
-
-}
-.testimonial-card{
-   background-color: #194D44;
-   margin: 10px;
-   border-radius: 15px;
-   padding: 10px 40px;
-   h5{
+    padding: 20px;
+  }
+  
+  .slide img {
+    width: 10%;
+    border-radius: 15px;
+  }
+  
+  .testimonial-text {
+    background-color: #194D44;
+    padding: 0 20px;
+    border-radius: 15px;
     color: white;
     font-family: 'Montserrat';
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 34px;
-    letter-spacing: 0%;
-
-   }
-   p{
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-style: italic;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0%;
-    color:white;
     
-   }
-}
-.testimonial-card::before{
+    width: 584px;
+  }
+  .testimonial-text::before{
     content: url('assets/quote.svg');
     color: #2A7C6B;
     font-size: xx-large;
+    position: relative;
+    right: -290px;
+    top: 40px;
+
+}
+  
+  .testimonial-text h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-text p {
+    font-style: italic;
+    font-size: 18px;
+    width: 55%;
+    height: fit-content;
+  }
+  
+  .prev, .next {
     position: absolute;
-    right: 90px;
-    top: 60px;
-
-}
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 10%;
-  width: auto;
-  padding: 16px;
-  margin-top: 52px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 10px;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a grey background color */
-.prev:hover, .next:hover {
-  background-color: #f1f1f1;
-  color: black;
-}
-
-@media (max-width: 480px) {
-    .slideshow-container {
-
-        height: 500px; 
-      }
-    .slide{
-        display: flex;
-        flex-direction: column;
-       
-        img{
-            width: 50%;
-            border-radius: 15px;
-            margin: 10px;
-            position: relative;
-            left: 20px;
-            top: 20px;
-            z-index: 1;
-        }
-        .testimonial-card{
-            position: relative;
-            top: -100px;
-            z-index: 0;
-            padding-top: 70px;
-
-        }
-    
-    }
-    .testimonial-card::before{
-        position: absolute;
-        right: 30px;
-        top: 30px;
-    
-    }
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 200px;
-        margin-top: 52px;
-    }
-        
-      
-}
+    top: 45%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: transparent;
+    color: #EAEAEA;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+  }
+  .prev:hover, .next:hover{
+    color: #5BC8AF;
+  }
+  .prev { left: -15px; }
+  .next { right: 0px; }
+  
+  .dots {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #5BC8AF;
+  }
+  
